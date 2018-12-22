@@ -31,9 +31,15 @@ basic.forever(() => {
 ## License
 
 GUI
+
+Forked from https://github.com/mengbishu/pxt-ds18b20
+
+* Changed pins for Calliope mini
+* added german translation
+
 ## Supported targets
 
-* for PXT/microbit
-(The metadata above is needed for package search.)
+* for PXT/Calliope
+
 
 
