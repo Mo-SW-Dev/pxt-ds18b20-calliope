@@ -1,0 +1,15 @@
+{
+  "DS18B20.TemperatureString|block": "|%p|Temperatur (Zahl)",
+  "DS18B20.TemperatureNumber|block": "|%p|Temperatur (Text)",
+  "DS18B20.pin.pin0|block": "0",
+  "DS18B20.pin.pin1|block": "1",
+  "DS18B20.pin.pin2|block": "2",
+  "DS18B20.pin.pin5|block": "5",
+  "DS18B20.pin.pin8|block": "8",
+  "DS18B20.pin.pin11|block": "11",
+  "DS18B20.pin.pin12|block": "12",
+  "DS18B20.pin.pin13|block": "13",
+  "DS18B20.pin.pin14|block": "14",
+  "DS18B20.pin.pin15|block": "15",
+  "DS18B20.pin.pin16|block": "16"
+}
