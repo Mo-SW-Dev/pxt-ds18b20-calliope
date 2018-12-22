@@ -11,6 +11,7 @@
         "README.md",
         "main.ts",
         "_locales/zh/ds18b20-strings.json",
+        "_locales/de/ds18b20-strings.json",
         "ds18b20.cpp"
     ],
     "testFiles": [
