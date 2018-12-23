@@ -8,29 +8,19 @@ namespace DS18B20 {
      */
 
      export enum pin {
-       //% block=pin0
-       pin0 = 0,
-       //% block=pin1
-       pin1 = 1,
-       //% block=pin2
-       pin2 = 2,
-       //% block=pin5
-       pin5 = 5,
-       //% block=pin8
-       pin8 = 8,
-       //% block=pin11
-       pin11 = 11,
-       //% block=pin12
-       pin12 = 12,
-       //% block=pin13
-       pin13 = 13,
-       //% block=pin14
-       pin14 = 14,
-       //% block=pin15
-       pin15 = 15,
-       //% block=pin16
-       pin16 = 16
-     }
+       //% block=P0
+       P0 = 19,
+       //% block=P1
+       P1 = 7,
+       //% block=P2
+       P2 = 8,
+       //% block=pP3
+       P3 = 23,
+       //% block=C16
+       C16 = 9,
+       //% block=C17
+       C17 = 15
+  }
      
     //% shim=DS18B20::Temperature
     export function Temperature(p: number): number {
