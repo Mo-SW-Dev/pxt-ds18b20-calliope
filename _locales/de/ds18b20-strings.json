@@ -1,5 +1,5 @@
 {
   "DS18B20.TemperatureString|block": "|%p|Temperatur als Text",
-  "DS18B20.TemperatureNumber|block": "|%p|Temperatur als Zahl",
-  "DS18B20.TemperatureScroll|block": "|%p|Scrolle Temperatur in Grad Celsius",
+  "DS18B20.TemperatureNumber|block": "|%p|Temperatur als Zahl"
+  
 }
