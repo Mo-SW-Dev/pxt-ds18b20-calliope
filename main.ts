@@ -8,17 +8,17 @@ namespace DS18B20 {
      */
 
      export enum pin {
-       //% block=P0
+       //% block="P0"
        P0 = 19,
-       //% block=P1
+       //% block="P1"
        P1 = 7,
-       //% block=P2
+       //% block="P2"
        P2 = 8,
-       //% block=pP3
+       //% block="P3"
        P3 = 23,
-       //% block=C16
+       //% block="C16"
        C16 = 9,
-       //% block=C17
+       //% block="C17"
        C17 = 15
   }
      
