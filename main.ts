@@ -9,17 +9,17 @@ namespace DS18B20 {
 
      export enum pin {
        //% block="P0"
-       P0 = 19,
+       P0 = MICROBIT_ID_IO_P12,
        //% block="P1"
-       P1 = 7,
+       P1 = MICROBIT_ID_IO_P0,
        //% block="P2"
-       P2 = 8,
+       P2 = MICROBIT_ID_IO_P1,
        //% block="P3"
-       P3 = 23,
+       P3 = MICROBIT_ID_IO_P16,
        //% block="C16"
-       C16 = 9,
+       C16 = MICROBIT_ID_IO_P2,
        //% block="C17"
-       C17 = 15
+       C17 = MICROBIT_ID_IO_P8
   }
      
     //% shim=DS18B20::Temperature
