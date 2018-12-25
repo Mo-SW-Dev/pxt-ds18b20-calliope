@@ -84,7 +84,7 @@ class microbitp : public MicroBitComponent
 //    microbitp  pin15(22,MICROBIT_PIN_P15,PIN_CAPABILITY_STANDARD);        //MOSI
 //    microbitp  pin16(23,MICROBIT_PIN_P16,PIN_CAPABILITY_STANDARD);        //PIN 16
     
-    microbitp  pin = pin0;
+    microbitp  pin = pin2;//pin0;
 
     uint8_t init() {
         pin.setDigitalValue(0);
