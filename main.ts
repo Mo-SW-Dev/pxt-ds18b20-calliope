@@ -25,7 +25,8 @@ namespace DS18B20 {
     /**
     * Schreibt die aktuelle Temperatur auf dem 5x5 Display
     * und hängt Grad Celsius an */
-    //% block="WriteTemperature"
+    //% weight=10 blockId="WriteTemperature" 
+    //% block="WriteTemperature |%p|"
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
     export function WriteTemperature(p: DigitalPin): void {
         basic.showString(TemperatureString(p))
