@@ -159,18 +159,18 @@ class microbitp : public MicroBitComponent
     //%
     int16_t Temperature(int p) {
         switch(p){
-          case 0: pin = pin0; break;
-          case 1: pin = pin1; break;
+         // case 0: pin = pin0; break;
+         // case 1: pin = pin1; break;
           case 2: pin = pin2; break;
-          case 5: pin = pin5; break;
+         // case 5: pin = pin5; break;
           case 8: pin = pin8; break;
-          case 11: pin = pin11; break;
-          case 12: pin = pin12; break;
-          case 13: pin = pin13; break;
-          case 14: pin = pin14; break;
-          case 15: pin = pin15; break;
-          case 16: pin = pin16; break;
-          default: pin = pin0;
+         // case 11: pin = pin11; break;
+         // case 12: pin = pin12; break;
+         // case 13: pin = pin13; break;
+         // case 14: pin = pin14; break;
+         // case 15: pin = pin15; break;
+         // case 16: pin = pin16; break;
+          default: pin = pin2;//pin0;
         }
         init();
         writeByte(0xCC);
