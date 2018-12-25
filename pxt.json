@@ -3,10 +3,9 @@
     "version": "0.0.3",
     "description": "ds18b20 Temperatursensor",
     "license": "MIT",
-    "dependencies": {
-        "core": "*",
-        "radio": "*"
-    },
+     "dependencies": {
+    "microbit": "calliope-mini/microbit#2.0.0-rc7-calliope-p2"
+},
     "files": [
         "README.md",
         "main.ts",
