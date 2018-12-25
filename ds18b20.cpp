@@ -71,17 +71,18 @@ class microbitp : public MicroBitComponent
 //    MicroBit uBit;
  //   MicroBitPin pin1 = uBit.io.P2;
 //    microbitp  pin0(7, 3, 15);
-    microbitp  pin0(7, MICROBIT_PIN_P0, PIN_CAPABILITY_ALL);
-    microbitp  pin1(8, MICROBIT_PIN_P1, PIN_CAPABILITY_ALL);
-    microbitp  pin2(9, MICROBIT_PIN_P2, PIN_CAPABILITY_ALL);
-    microbitp  pin5(12, MICROBIT_PIN_P5, PIN_CAPABILITY_STANDARD);        //BTN_A
-    microbitp  pin8(15, MICROBIT_PIN_P8, PIN_CAPABILITY_STANDARD);        //PIN 18
-    microbitp  pin11(18,MICROBIT_PIN_P11,PIN_CAPABILITY_STANDARD);        //BTN_B
-    microbitp  pin12(19,MICROBIT_PIN_P12,PIN_CAPABILITY_STANDARD);        //PIN 20
-    microbitp  pin13(20,MICROBIT_PIN_P13,PIN_CAPABILITY_STANDARD);        //SCK
-    microbitp  pin14(21,MICROBIT_PIN_P14,PIN_CAPABILITY_STANDARD);        //MISO
-    microbitp  pin15(22,MICROBIT_PIN_P15,PIN_CAPABILITY_STANDARD);        //MOSI
-    microbitp  pin16(23,MICROBIT_PIN_P16,PIN_CAPABILITY_STANDARD);        //PIN 16
+  
+//    microbitp  pin0(7, MICROBIT_PIN_P0, PIN_CAPABILITY_ALL);
+//    microbitp  pin1(8, MICROBIT_PIN_P1, PIN_CAPABILITY_ALL);
+    microbitp  pin2(9, MICROBIT_PIN_P2, PIN_CAPABILITY_ALL); // Calliope C16
+//    microbitp  pin5(12, MICROBIT_PIN_P5, PIN_CAPABILITY_STANDARD);        //BTN_A
+    microbitp  pin8(15, MICROBIT_PIN_P8, PIN_CAPABILITY_STANDARD);       //Calliope C17 //PIN 18
+//    microbitp  pin11(18,MICROBIT_PIN_P11,PIN_CAPABILITY_STANDARD);        //BTN_B
+//    microbitp  pin12(19,MICROBIT_PIN_P12,PIN_CAPABILITY_STANDARD);        //PIN 20
+//    microbitp  pin13(20,MICROBIT_PIN_P13,PIN_CAPABILITY_STANDARD);        //SCK
+//    microbitp  pin14(21,MICROBIT_PIN_P14,PIN_CAPABILITY_STANDARD);        //MISO
+//    microbitp  pin15(22,MICROBIT_PIN_P15,PIN_CAPABILITY_STANDARD);        //MOSI
+//    microbitp  pin16(23,MICROBIT_PIN_P16,PIN_CAPABILITY_STANDARD);        //PIN 16
     
     microbitp  pin = pin0;
 
