@@ -2,10 +2,15 @@
 
 namespace DS18B20 {
     /**
-     * Reads the temperature from the one-wire temperature sensor.
-     * Returns a 4 digit number. value should be divided by 100 to get 
-     *temperature in hundreths of a degree centigrade. 
-     * block="Temperature(C)"
+     * Liest die Temperatur aus dem one-wire Temperature Sensor.
+     * Gibt eine 4-stellige Zahl zurück. Der Wert sollte durch 100 geteilt werden da 
+     * der Wert um 100 überhöht ist. 
+     * Die beiden linken Ziffern sind die Stellen vor dem Komma, die beiden rechten Stellen 
+     * zwei Nachkommastellen.
+     * Originalerweiterung von https://github.com/mengbishu/pxt-ds18b20
+     * Special thanks 2 mengbishu!
+     * Erweitert mit Anpassungen für den Calliope Mini (https://www.calliope.cc) von Michael Klein.
+     * Pins angepasst, Funktionen übersetzt, Writetemperature ergänzt.
      */
 
     //% shim=DS18B20::Temperature
