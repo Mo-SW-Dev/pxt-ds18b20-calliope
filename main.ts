@@ -13,16 +13,8 @@ namespace DS18B20 {
         // Fake function for simulator
         return 0
     }
-
-    //% weight=10 blockId="Temperature_number" 
-    //% block="Temperature_number |%p|"
-    //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
-    export function TemperatureNumber(p: DigitalPin): number {
-        // Fake function for simulator
-        return Temperature(p)
-    }
-
-    /**
+    
+      /**
     * Schreibt die aktuelle Temperatur auf dem 5x5 Display
     * und hängt Grad Celsius an */
     //% weight=10 blockId="WriteTemperature" 
@@ -38,7 +30,22 @@ namespace DS18B20 {
             . . . . .   # # . . .
             `).scrollImage(1, 200)
     }
-
+    
+   /**
+    * Liest die Temperatur aus dem ds18b20 Sensor als 4-stellige Ganzzahl aus.
+    * Der Wert muss durch 100 geteilt werden um den wirklichen Wert zuberechnen.
+    * Die beiden rechten Ziffern sind die zwei Nachkommastellen!*/
+    //% weight=10 blockId="Temperature_number" 
+    //% block="Temperature_number |%p|"
+    //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
+    export function TemperatureNumber(p: DigitalPin): number {
+        // Fake function for simulator
+        return Temperature(p)
+    }    
+    
+   /**
+    * Liest die Temperatur aus dem ds18b20 aus und erzeugt eine Textzeile (String)
+    mit Komma und 2 Nachkommastellen.*/
     //% weight=10 blockId="Temperature_string" 
     //% block="|%p| Temperature_string "
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
@@ -49,18 +56,18 @@ namespace DS18B20 {
      let z = ''
       if (temp >= 0) {
         if (y < 10) {
-            z = x.toString() + '.0' + y.toString()
+            z = x.toString() + ',0' + y.toString()
         }
         else {
-            z = x.toString() + '.' + y.toString()
+            z = x.toString() + ',' + y.toString()
         }
     }
     else if (temp < 0) {
         if (y > -10) {
-            z = '-' + (-x).toString() + '.0' + (-y).toString()
+            z = '-' + (-x).toString() + ',0' + (-y).toString()
         }
         else {
-            z = '-' + (-x).toString() + '.' + (-y).toString()
+            z = '-' + (-x).toString() + ',' + (-y).toString()
         }
     }
     return z
