@@ -13,6 +13,21 @@ namespace DS18B20 {
      * Pins angepasst, Funktionen übersetzt, Writetemperature ergänzt.
      */
 
+    export enum pin {
+       //% block=P0
+       pin12 = 12,
+       //% block=P1
+       pin0 = 0,
+       //% block=P2
+       pin1 = 1,
+       //% block=P3
+       pin16 = 16,
+       //% block=C16
+       pin2 = 2,
+       //% block=C17
+       pin8 = 8       
+}
+    
     //% shim=DS18B20::Temperature
     export function Temperature(p: number): number {
         // Fake function for simulator
@@ -25,7 +40,7 @@ namespace DS18B20 {
     //% weight=10 blockId="WriteTemperature" 
     //% block="WriteTemperature |%p|"
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
-    export function WriteTemperature(p: DigitalPin): void {
+    export function WriteTemperature(p: pin): void {
         basic.showString(TemperatureString(p))
         images.createBigImage(`
             . # . . .   # # . . .
@@ -43,7 +58,7 @@ namespace DS18B20 {
     //% weight=10 blockId="Temperature_number" 
     //% block="Temperature_number |%p|"
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
-    export function TemperatureNumber(p: DigitalPin): number {
+    export function TemperatureNumber(p: pin): number {
         // Fake function for simulator
         return Temperature(p)
     }    
@@ -54,7 +69,7 @@ namespace DS18B20 {
     //% weight=10 blockId="Temperature_string" 
     //% block="|%p| Temperature_string "
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
-    export function TemperatureString(p:DigitalPin): string {
+    export function TemperatureString(p:pin): string {
      let temp = Temperature(p);
      let x = (temp / 100)
      let y = (temp % 100)
