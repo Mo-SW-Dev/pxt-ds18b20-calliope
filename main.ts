@@ -22,10 +22,10 @@ namespace DS18B20 {
        pin1 = 1,
        //% block=P3
        pin16 = 16,
-       //% block=C16
-       pin2 = 2,
-       //% block=C17
-       pin8 = 8       
+     //  //% block=C16      bekomme die Pins im C++ File einfach nicht angesteuert (Issue1)
+     //  pin2 = 2,
+     //  //% block=C17
+     //  pin8 = 8       
 }
     
     //% shim=DS18B20::Temperature
@@ -34,7 +34,7 @@ namespace DS18B20 {
         return 0
     }
     
-      /**
+    /**
     * Schreibt die aktuelle Temperatur auf dem 5x5 Display
     * und hängt Grad Celsius an */
     //% weight=10 blockId="WriteTemperature" 
@@ -42,13 +42,14 @@ namespace DS18B20 {
     //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
     export function WriteTemperature(p: pin): void {
         basic.showString(TemperatureString(p))
-        images.createBigImage(`
-            . # . . .   # # . . .
-            # . # . #   . . . . .
-            . # . . #   . . . . .
-            . . . . #   . . . . .
-            . . . . .   # # . . .
-            `).scrollImage(1, 200)
+        images.createImage(`
+        . # . . .
+        # . # . .
+        . # . . .
+        . . . . .
+        . . . . .
+        `).scrollImage(1, 200)
+        basic.showString("C ")
     }
     
    /**
