@@ -89,7 +89,8 @@ class microbitp : public MicroBitComponent
 
     uint8_t init() {
         pin.setDigitalValue(0);
-        for (volatile uint16_t i = 0; i < 600; i++);
+        //for (volatile uint16_t i = 0; i < 600; i++);
+      wait_us(500);
         pin.setDigitalValue(1);
         for (volatile uint8_t i = 0; i < 30; i++);
         int b = pin.getDigitalValue();
