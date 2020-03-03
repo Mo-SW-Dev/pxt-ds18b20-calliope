@@ -89,20 +89,19 @@ class microbitp : public MicroBitComponent
         return b;
     }
 
-
     void writeBit(int b) {
         int delay1, delay2;
         if (b == 1) {
-            delay1 = 2;
-            delay2 = 70;
+            delay1 = 1;
+            delay2 = 80;
         } else {
-            delay1 = 70;
-            delay2 = 2;
+            delay1 = 75;
+            delay2 = 6;
         }
         pin.setDigitalValue(0);
-        wait_us(delay1);
-        pin.getDigitalValue();
-        wait_us(delay2);
+        for (uint8_t i = 1; i < delay1; i++);
+        pin.setDigitalValue(1);
+        for (uint8_t i = 1; i < delay2; i++);
     }
 
     void writeByte(int byte) {
@@ -118,12 +117,12 @@ class microbitp : public MicroBitComponent
     }
 
     int readBit() {
+        volatile int i;
         pin.setDigitalValue(0);
-        wait_us(2);
-        pin.getDigitalValue();
-        wait_us(8);
+        pin.setDigitalValue(1);
+        //for (i = 1; i < 20; i++);
         int b = pin.getDigitalValue();
-        wait_us(62);
+        for (i = 1; i < 60; i++);
         return b;
     }
 
@@ -137,7 +136,7 @@ class microbitp : public MicroBitComponent
         if (readBit() == 1)
             break;
         };
-        return 1;
+        return (j);
     }
 
     int readByte() {
