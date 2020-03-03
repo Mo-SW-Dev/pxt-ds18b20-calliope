@@ -128,6 +128,8 @@ class microbitp : public MicroBitComponent
     }
 
     int convert() {
+        volatile int i;
+        int j;
         writeByte(0x44);
         for (j = 1; j < 1000; j++) {
             for (i = 1; i < 900; i++) {
