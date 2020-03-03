@@ -22,10 +22,10 @@ namespace DS18B20 {
        pin1 = 1,
        //% block=P3
        pin16 = 16,
-     //  //% block=C16      bekomme die Pins im C++ File einfach nicht angesteuert (Issue1)
-     //  pin2 = 2,
-     //  //% block=C17
-     //  pin8 = 8       
+       //% block=C16      bekomme die Pins im C++ File einfach nicht angesteuert (Issue1)
+       pin2 = 2,
+       //% block=C17
+       pin8 = 8       
 }
     
     //% shim=DS18B20::Temperature
