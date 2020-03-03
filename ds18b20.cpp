@@ -82,6 +82,8 @@ class microbitp : public MicroBitComponent
   //  microbitp  pin14(21,MICROBIT_PIN_P14,PIN_CAPABILITY_STANDARD);        //
  //   microbitp  pin15(22,MICROBIT_PIN_P15,PIN_CAPABILITY_STANDARD);        //
     microbitp  pin16(23,MICROBIT_PIN_P16,PIN_CAPABILITY_ALL);              //P3
+  microbitp  pin19(25, MICROBIT_PIN_P19, PIN_CAPABILITY_STANDARD);        //C18
+  microbitp  pin20(24, MICROBIT_PIN_P20, PIN_CAPABILITY_STANDARD);        //C19
     
     microbitp  pin = pin0;
 
@@ -169,6 +171,8 @@ class microbitp : public MicroBitComponent
       //    case 14: pin = pin14; break;
       //    case 15: pin = pin15; break;
           case 16: pin = pin16; break;
+          case 19: pin = pin19; break;
+          case 20: pin = pin20; break;
           default: pin = pin0;
         }
         init();
