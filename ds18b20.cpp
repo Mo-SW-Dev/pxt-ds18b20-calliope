@@ -68,33 +68,24 @@ class microbitp : public MicroBitComponent
 };
     
 
-//    MicroBit uBit;
- //   MicroBitPin pin1 = uBit.io.P2;
-//    microbitp  pin0(7, 3, 15);                                          // Calliope Pins
     microbitp  pin0(7, MICROBIT_PIN_P0, PIN_CAPABILITY_ALL);              //P1
     microbitp  pin1(8, MICROBIT_PIN_P1, PIN_CAPABILITY_ALL);              //P2
     microbitp  pin2(9, MICROBIT_PIN_P2, PIN_CAPABILITY_ALL);              //C16
- //   microbitp  pin5(12, MICROBIT_PIN_P5, PIN_CAPABILITY_STANDARD);        //
     microbitp  pin8(15, MICROBIT_PIN_P8, PIN_CAPABILITY_STANDARD);        //C17
- //   microbitp  pin11(18,MICROBIT_PIN_P11,PIN_CAPABILITY_STANDARD);        //
     microbitp  pin12(19,MICROBIT_PIN_P12,PIN_CAPABILITY_STANDARD);        //P0
- //   microbitp  pin13(20,MICROBIT_PIN_P13,PIN_CAPABILITY_STANDARD);        //
-  //  microbitp  pin14(21,MICROBIT_PIN_P14,PIN_CAPABILITY_STANDARD);        //
- //   microbitp  pin15(22,MICROBIT_PIN_P15,PIN_CAPABILITY_STANDARD);        //
     microbitp  pin16(23,MICROBIT_PIN_P16,PIN_CAPABILITY_ALL);              //P3
-  microbitp  pin19(25, MICROBIT_PIN_P19, PIN_CAPABILITY_STANDARD);        //C18
-  microbitp  pin20(24, MICROBIT_PIN_P20, PIN_CAPABILITY_STANDARD);        //C19
+    microbitp  pin19(25, MICROBIT_PIN_P19, PIN_CAPABILITY_STANDARD);        //C18
+    microbitp  pin20(24, MICROBIT_PIN_P20, PIN_CAPABILITY_STANDARD);        //C19
     
     microbitp  pin = pin0;
 
     uint8_t init() {
         pin.setDigitalValue(0);
-        //for (volatile uint16_t i = 0; i < 600; i++);
-      wait_us(500);
-        pin.setDigitalValue(1);
-        for (volatile uint8_t i = 0; i < 30; i++);
+        wait_us(500);
+        pin.getDigitalValue();
+        wait_us(120);
         int b = pin.getDigitalValue();
-        for (volatile uint16_t i = 0; i < 600; i++);
+        wait_us(500);
         return b;
     }
 
@@ -102,16 +93,16 @@ class microbitp : public MicroBitComponent
     void writeBit(int b) {
         int delay1, delay2;
         if (b == 1) {
-            delay1 = 1;
-            delay2 = 80;
+            delay1 = 2;
+            delay2 = 70;
         } else {
-            delay1 = 75;
-            delay2 = 6;
+            delay1 = 70;
+            delay2 = 2;
         }
         pin.setDigitalValue(0);
-        for (uint8_t i = 1; i < delay1; i++);
-        pin.setDigitalValue(1);
-        for (uint8_t i = 1; i < delay2; i++);
+        wait_us(delay1);
+        pin.getDigitalValue();
+        wait_us(delay2);
     }
 
     void writeByte(int byte) {
@@ -127,26 +118,23 @@ class microbitp : public MicroBitComponent
     }
 
     int readBit() {
-        volatile int i;
         pin.setDigitalValue(0);
-        pin.setDigitalValue(1);
-        //for (i = 1; i < 20; i++);
+        wait_us(2);
+        pin.getDigitalValue();
+        wait_us(8);
         int b = pin.getDigitalValue();
-        for (i = 1; i < 60; i++);
+        wait_us(62);
         return b;
     }
 
     int convert() {
-        volatile int i;
-        int j;
         writeByte(0x44);
-        for (j = 1; j < 1000; j++) {
-            for (i = 1; i < 900; i++) {
-        };
-        if (readBit() == 1)
-            break;
-        };
-        return (j);
+        while(1){
+          if (readBit() == 1)
+            return 0;
+          };
+        }
+        return 1;
     }
 
     int readByte() {
