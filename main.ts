@@ -25,9 +25,9 @@ namespace DS18B20 {
        //% block=C16      bekomme die Pins im C++ File einfach nicht angesteuert (Issue1)
        pin2 = 2,
        //% block=C17
-       pin8 = 8       
+       pin8 = 8,       
        //% block=C18
-       pin19 = 19
+       pin19 = 19,
        //% block=C19
        pin20 = 20
 }
