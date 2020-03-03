@@ -129,11 +129,12 @@ class microbitp : public MicroBitComponent
 
     int convert() {
         writeByte(0x44);
-        while(1){
-          if (readBit() == 1){
-            return 0;
-          }
-        }
+        for (j = 1; j < 1000; j++) {
+            for (i = 1; i < 900; i++) {
+        };
+        if (readBit() == 1)
+            break;
+        };
         return 1;
     }
 
