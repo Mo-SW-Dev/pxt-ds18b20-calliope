@@ -81,11 +81,11 @@ class microbitp : public MicroBitComponent
 
     uint8_t init() {
         pin.setDigitalValue(0);
-        wait_us(500);
-        pin.getDigitalValue();
-        wait_us(120);
+        for (volatile uint16_t i = 0; i < 600; i++);
+        pin.setDigitalValue(1);
+        for (volatile uint8_t i = 0; i < 30; i++);
         int b = pin.getDigitalValue();
-        wait_us(500);
+        for (volatile uint16_t i = 0; i < 600; i++);
         return b;
     }
 
